@@ -2,12 +2,17 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#1e1e1e] p-4">
       <div className="text-center">
-        <h1 className="text-[#f5f5f5] text-5xl font-bold mb-4">
-          ~come to Rasty Store
-        </h1>
+        <h1 className="text-[#f5f5f5] text-5xl font-bold mb-4">Rasty Store</h1>
         <p className="text-[#a5a5a5] text-xl mb-8">
           Your favorite place for quality merch is coming soon!
         </p>
+        <div>
+          Production test (Shouldn't be visible in production):
+          <br />
+          <span className="text-[#ff6f61] font-mono">
+            This is a test message.
+          </span>
+        </div>
         <a
           href="https://www.instagram.com/ras_ty.store"
           target="_blank"

@@ -46,19 +46,6 @@ const darkTheme = createTheme({
 
 const Navbar = () => {
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen flex items-center justify-center bg-[#1e1e1e] p-4">
-      <div className="text-center">
-        <h1 className="text-[#f5f5f5] text-5xl font-bold mb-4">Rasty Store</h1>
-        <p className="text-[#a5a5a5] text-xl mb-8">
-          Your favorite place for quality merch is coming soon!
-        </p>
-        <a
-          href="https://www.instagram.com/ras_ty.store"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#e1306c] hover:bg-[#c72e65] text-white font-semibold py-2 px-6 rounded transition-colors"
-=======
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl py-6 border-b border-white/20">
       <div className="max-w-full mx-auto px-6 flex justify-center items-center">
         <Icon
@@ -68,7 +55,6 @@ const Navbar = () => {
             scale: 2,
             mb: -2.5,
           }}
->>>>>>> e508a237f7d26f9e7654c0fa45136d8cdfd3c31d
         >
           <img src={logo} alt="" />
         </Icon>

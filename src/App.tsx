@@ -67,49 +67,78 @@ const MainContent = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-6">
       <Container maxWidth="sm">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <Typography
-            variant="overline"
-            sx={{
-              color: "text.secondary",
-              letterSpacing: 10,
-              mb: 1,
-              fontSize: "1rem",
-              display: "block",
-            }}
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0 }}
           >
-            PORTFOLIO
-          </Typography>
-          <Typography variant="h3" sx={{ mb: 4, fontWeight: 400 }}>
-            Design, Code <br />& Creative Work.
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "text.secondary",
-              mb: 6,
-              fontSize: "1rem",
-              lineHeight: 1.6,
-            }}
-          >
-            A collection of projects and digital experiences focused on
-            simplicity and function. Currently updating my workspace to share
-            new work.
-          </Typography>
-          <Box sx={{ pt: 4, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
             <Typography
-              variant="body2"
-              sx={{ color: "text.secondary", letterSpacing: 1 }}
+              variant="overline"
+              sx={{
+                color: "text.secondary",
+                letterSpacing: 10,
+                mb: 1,
+                fontSize: "1rem",
+                display: "block",
+              }}
             >
-              STAY TUNED
+              PORTFOLIO
             </Typography>
-          </Box>
-        </motion.div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <Typography variant="h3" sx={{ mb: 4, fontWeight: 400 }}>
+              Design, Code <br />& Creative Work.
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Typography
+              variant="body1"
+              sx={{
+                color: "text.secondary",
+                mb: 6,
+                fontSize: "1rem",
+                lineHeight: 1.6,
+              }}
+            >
+              A collection of projects and digital experiences focused on
+              simplicity and function. Currently updating my workspace to share
+              new work.
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            style={{ transformOrigin: "center" }}
+          >
+            <Box sx={{ pt: 4, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 2.2 }}
+              >
+                <Typography
+                  variant="body2"
+                  sx={{ color: "text.secondary", letterSpacing: 1 }}
+                >
+                  STAY TUNED
+                </Typography>
+              </motion.div>
+            </Box>
+          </motion.div>
+        </div>
       </Container>
     </section>
   );

@@ -36,7 +36,7 @@ const darkTheme = createTheme({
     h1: {
       fontFamily: '"Playfair Display", serif',
     },
-    h2: {
+    h3: {
       fontFamily: '"Playfair Display", serif',
     },
   },
@@ -78,14 +78,14 @@ const MainContent = () => {
             sx={{
               color: "text.secondary",
               letterSpacing: 10,
-              mb: 2,
+              mb: 1,
               fontSize: "1rem",
               display: "block",
             }}
           >
             PORTFOLIO
           </Typography>
-          <Typography variant="h2" sx={{ mb: 4, fontWeight: 400 }}>
+          <Typography variant="h3" sx={{ mb: 4, fontWeight: 400 }}>
             Design, Code <br />& Creative Work.
           </Typography>
           <Typography
@@ -93,7 +93,7 @@ const MainContent = () => {
             sx={{
               color: "text.secondary",
               mb: 6,
-              fontSize: "1.1rem",
+              fontSize: "1rem",
               lineHeight: 1.6,
             }}
           >

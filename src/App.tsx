@@ -152,7 +152,7 @@ const MainContent = () => {
                 <Button
                   component="a"
                   className="transition-colors duration-300"
-                  href="https://instagram.com/ras_ty.store"
+                  href="https://instagram.com/sevrindova"
                   target="_blank"
                   rel="noopener noreferrer"
                   color="secondary"

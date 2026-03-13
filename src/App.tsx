@@ -45,6 +45,31 @@ const darkTheme = createTheme({
 
 // --- Components ---
 
+// Send a click event to a Cloudflare-backed endpoint.
+// Replace `WORKER_ENDPOINT` with your Cloudflare Worker/DB URL.
+const sendClickEvent = async () => {
+  try {
+    // Replace with your Cloudflare Worker URL (worker should write to R2 bucket "instaclick").
+    const res = await fetch("rasty.rastyxdofficial.workers.dev/click", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        timestamp: new Date().toISOString(),
+        source: "instagram-button",
+        bucket: "instaclick",
+      }),
+    });
+
+    if (!res.ok) {
+      console.warn("Click event not stored", await res.text());
+    }
+  } catch (error) {
+    console.warn("Failed to send click event", error);
+  }
+};
+
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl py-6 border-b border-white/20">
@@ -126,8 +151,8 @@ const MainContent = () => {
           >
             <Box sx={{ pt: 4, borderTop: "1px solid rgba(255,255,255,0.1)" }}>
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 2.2 }}
               >
                 <Typography
@@ -136,6 +161,13 @@ const MainContent = () => {
                 >
                   For more updates, follow us on Instagram.
                 </Typography>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 2.35 }}
+              >
                 <Button
                   component="a"
                   className="transition-colors duration-300"
@@ -144,6 +176,7 @@ const MainContent = () => {
                   rel="noopener noreferrer"
                   color="secondary"
                   variant="outlined"
+                  onClick={sendClickEvent}
                   sx={{
                     mt: 2,
                     borderColor: "text.secondary",

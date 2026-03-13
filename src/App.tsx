@@ -42,15 +42,6 @@ const darkTheme = createTheme({
     },
   },
 });
-
-// --- Components ---
-// A lightweight helper to write data into a Cloudflare Worker / R2 bucket.
-//
-// Your worker should accept PUT requests at `${WORKER_BUCKET_URL}{key}` and
-// store the request body under that key (e.g. using env.MY_BUCKET.put).
-// get env from wrangler.json: "binding": "INSTCOUNT"
-// Send a click event to a Cloudflare-backed endpoint.
-// (This will be a no-op if the endpoint is not available, but it won't break the UI.)
 const sendClickEvent = async () => {
   try {
     await fetch("https://r2-worker.rastyxdofficial.workers.dev/instaclick", {

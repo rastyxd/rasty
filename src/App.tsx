@@ -44,32 +44,22 @@ const darkTheme = createTheme({
 });
 
 // --- Components ---
-
+// A lightweight helper to write data into a Cloudflare Worker / R2 bucket.
+//
+// Your worker should accept PUT requests at `${WORKER_BUCKET_URL}{key}` and
+// store the request body under that key (e.g. using env.MY_BUCKET.put).
+// get env from wrangler.json: "binding": "INSTCOUNT"
 // Send a click event to a Cloudflare-backed endpoint.
-// Replace `WORKER_ENDPOINT` with your Cloudflare Worker/DB URL.
+// (This will be a no-op if the endpoint is not available, but it won't break the UI.)
 const sendClickEvent = async () => {
   try {
-    // Replace with your Cloudflare Worker URL (worker should write to R2 bucket "instaclick").
-    const res = await fetch("rasty.rastyxdofficial.workers.dev/click", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        timestamp: new Date().toISOString(),
-        source: "instagram-button",
-        bucket: "instaclick",
-      }),
+    await fetch("https://r2-worker.rastyxdofficial.workers.dev/instaclick", {
+      method: "GET",
     });
-
-    if (!res.ok) {
-      console.warn("Click event not stored", await res.text());
-    }
   } catch (error) {
-    console.warn("Failed to send click event", error);
+    console.error("Error sending click event:", error);
   }
 };
-
 const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl py-6 border-b border-white/20">

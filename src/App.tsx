@@ -9,6 +9,7 @@ import {
   createTheme,
   CssBaseline,
   Box,
+  Button,
   Icon,
   Container,
   Typography,
@@ -133,8 +134,31 @@ const MainContent = () => {
                   variant="body2"
                   sx={{ color: "text.secondary", letterSpacing: 1 }}
                 >
-                  STAY TUNED
+                  For more updates, follow us on Instagram.
                 </Typography>
+                <Button
+                  component="a"
+                  className="transition-colors duration-300"
+                  href="https://instagram.com/ras_ty.store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="secondary"
+                  variant="outlined"
+                  sx={{
+                    mt: 2,
+                    borderColor: "text.secondary",
+                    color: "text.secondary",
+                    textTransform: "revert",
+                    scale: 1.1,
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      borderColor: "primary.main",
+                      color: "primary.main",
+                    },
+                  }}
+                >
+                  Pikaboo!
+                </Button>
               </motion.div>
             </Box>
           </motion.div>

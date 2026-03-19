@@ -1,37 +1,37 @@
-"use client";
+'use client';
 
-import { motion } from "motion/react";
-import { useRef, useState } from "react";
+import { motion } from 'motion/react';
+import { useRef, useState } from 'react';
 
 const upcoming = [
   {
-    tag: "Finance",
-    eta: "Q3 2026",
+    tag: 'Finance',
+    eta: 'Q3 2026',
     desc: "See every subscription you're paying for. Cancel what you forgot about.",
-    glow: "34, 197, 94", // emerald
+    glow: '34, 197, 94',   // emerald
   },
   {
-    tag: "Health",
-    eta: "Q4 2026",
+    tag: 'Health',
+    eta: 'Q4 2026',
     desc: "Know what's worth tracking. Ignore the rest.",
-    glow: "244, 63, 94", // rose
+    glow: '244, 63, 94',   // rose
   },
   {
-    tag: "Mobile IDE",
-    eta: "Q1 2027",
+    tag: 'Mobile IDE',
+    eta: 'Q1 2027',
     desc: "Code on your phone like you're at a desk. Custom keyboard, trackpad strip, on-device Python and JS. No compromises.",
-    glow: "59, 130, 246", // blue
+    glow: '59, 130, 246',  // blue
   },
 ];
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24, filter: "blur(4px)" },
-  whileInView: { opacity: 1, y: 0, filter: "blur(0px)" },
+  initial: { opacity: 0, y: 24, filter: 'blur(4px)' },
+  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
   viewport: { once: true },
-  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 });
 
-function GlowCard({ p, i }: { p: (typeof upcoming)[0]; i: number }) {
+function GlowCard({ p, i }: { p: typeof upcoming[0]; i: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 50, y: 50 });
   const [hovered, setHovered] = useState(false);
@@ -56,10 +56,10 @@ function GlowCard({ p, i }: { p: (typeof upcoming)[0]; i: number }) {
     >
       {/* Radial glow that follows mouse */}
       <div
-        className="absolute inset-0 scale-150 pointer-events-none transition-opacity duration-300"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
         style={{
           opacity: hovered ? 1 : 0,
-          background: `radial-gradient(circle at ${pos.x}% ${pos.y}%, rgba(${p.glow}, 0.1) 0%, transparent 80%)`,
+          background: `radial-gradient(circle at ${pos.x}% ${pos.y}%, rgba(${p.glow}, 0.12) 0%, transparent 65%)`,
         }}
       />
 
@@ -68,17 +68,11 @@ function GlowCard({ p, i }: { p: (typeof upcoming)[0]; i: number }) {
         <span className="text-[11px] font-semibold text-r-muted">{p.eta}</span>
       </div>
       <div className="relative z-10">
-        <h3 className="text-[18px] font-black text-r-muted/60 tracking-[-0.02em] mb-3 italic">
-          Untitled
-        </h3>
-        <p className="text-[14px] leading-[1.72] text-r-text font-medium">
-          {p.desc}
-        </p>
+        <h3 className="text-[18px] font-black text-r-muted/60 tracking-[-0.02em] mb-3 italic">Untitled</h3>
+        <p className="text-[14px] leading-[1.72] text-r-text font-medium">{p.desc}</p>
       </div>
       <div className="relative z-10 mt-auto pt-4 border-t border-r-border">
-        <span className="text-[12px] font-medium text-r-muted/40">
-          Details TBA
-        </span>
+        <span className="text-[12px] font-medium text-r-muted/40">Details TBA</span>
       </div>
     </motion.div>
   );
@@ -88,11 +82,12 @@ export default function CTA() {
   return (
     <section className="px-8 py-24 bg-r-bg">
       <div className="max-w-[1100px] mx-auto">
+
         <motion.div {...fadeUp()} className="text-center mb-16">
           <div className="r-tag mb-5 mx-auto w-fit">What's next</div>
           <h2
             className="font-black text-r-text tracking-[-0.03em] leading-[1.1] mb-4"
-            style={{ fontSize: "clamp(28px, 4vw, 48px)" }}
+            style={{ fontSize: 'clamp(28px, 4vw, 48px)' }}
           >
             What we're working on
           </h2>
@@ -106,6 +101,7 @@ export default function CTA() {
             <GlowCard key={p.tag} p={p} i={i} />
           ))}
         </div>
+
       </div>
     </section>
   );

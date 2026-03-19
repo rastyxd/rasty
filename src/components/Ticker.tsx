@@ -7,12 +7,20 @@ const items = [
 
 export default function Ticker() {
   return (
-    <div className="border-y border-r-border py-3 overflow-hidden select-none bg-r-bg-soft">
+    <div style={{
+      borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB',
+      padding: '10px 0', overflow: 'hidden', userSelect: 'none',
+      background: '#F8F7FF',
+    }}>
       <div className="marquee-track">
         {items.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-4 px-6 text-[11px] font-semibold tracking-[0.1em] uppercase text-r-muted">
+          <span key={i} style={{
+            display: 'inline-flex', alignItems: 'center', gap: 16,
+            padding: '0 24px', fontSize: 11, fontWeight: 600,
+            letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280',
+          }}>
             {item}
-            <span className="w-1 h-1 rounded-full bg-r-purple/30 inline-block" />
+            <span style={{ width: 4, height: 4, borderRadius: '50%', background: 'rgba(124,58,237,0.3)', display: 'inline-block' }} />
           </span>
         ))}
       </div>

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-r-bg:           #FFFFFF;
+  --color-r-bg-soft:      #F8F7FF;
+  --color-r-text:         #0A0A0A;
+  --color-r-muted:        #6B7280;
+  --color-r-border:       #E5E7EB;
+  --color-r-purple:       #7C3AED;
+  --color-r-purple-hover: #6D28D9;
+  --color-r-purple-light: #EDE9FE;
+  --color-r-purple-faint: #F5F3FF;
+  --color-r-tag-text:     #6D28D9;
+  --font-family-body:     'Inter', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  {
+  font-family: 'Inter', sans-serif;
+  background: #FFFFFF;
+  color: #0A0A0A;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.r-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6D28D9;
+  background: #F5F3FF;
+  border: 1px solid #DDD6FE;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 32s linear infinite;
+  white-space: nowrap;
+  display: flex;
+}

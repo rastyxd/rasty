@@ -1,29 +1,9 @@
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TelegramIcon from "@mui/icons-material/Telegram";
-
 const nav = [
   { label: "Products", href: "#products" },
   { label: "About", href: "#about" },
-  { label: "What's next", href: "#cta" },
+  { label: "Contact", href: "mailto:hello@rasty.uk" },
 ];
-const social = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/ras_ty.store",
-    logo: InstagramIcon,
-  },
-  {
-    label: "Github",
-    href: "https://github.com/rastyxd",
-    logo: GitHubIcon,
-  },
-  {
-    label: "Telegram",
-    href: "https://t.me/taq_ana",
-    logo: TelegramIcon,
-  },
-];
+const social = [{ label: "Instagram", href: "https://instagram.com/rasty.uk" }];
 
 export default function Footer() {
   return (

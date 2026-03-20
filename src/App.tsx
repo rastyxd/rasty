@@ -14,15 +14,20 @@ export default function App() {
   const contactRef = useRef<HTMLDivElement>(null);
 
   const scrollTo = (ref: React.RefObject<HTMLDivElement>) => {
+    if (!ref.current) return;
     ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <>
       <Nav
-        onProducts={() => scrollTo(productsRef)}
-        onAbout={() => scrollTo(aboutRef)}
-        onContact={() => scrollTo(contactRef)}
+        onProducts={() =>
+          scrollTo(productsRef as React.RefObject<HTMLDivElement>)
+        }
+        onAbout={() => scrollTo(aboutRef as React.RefObject<HTMLDivElement>)}
+        onContact={() =>
+          scrollTo(contactRef as React.RefObject<HTMLDivElement>)
+        }
       />
       <main>
         <Hero />

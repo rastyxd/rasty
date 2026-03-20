@@ -9,25 +9,19 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const productsRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+  const productsRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const contactRef = useRef<HTMLDivElement | null>(null);
 
-  const scrollTo = (ref: React.RefObject<HTMLDivElement>) => {
-    if (!ref.current) return;
-    ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
+ const scrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+   ref.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+ };
   return (
     <>
       <Nav
-        onProducts={() =>
-          scrollTo(productsRef as React.RefObject<HTMLDivElement>)
-        }
-        onAbout={() => scrollTo(aboutRef as React.RefObject<HTMLDivElement>)}
-        onContact={() =>
-          scrollTo(contactRef as React.RefObject<HTMLDivElement>)
-        }
+        onProducts={() => scrollTo(productsRef)}
+        onAbout={() => scrollTo(aboutRef)}
+        onContact={() => scrollTo(contactRef)}
       />
       <main>
         <Hero />

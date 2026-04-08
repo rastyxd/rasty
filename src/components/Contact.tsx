@@ -10,7 +10,7 @@ const cards = [
     icon: Telegram,
     title: "Telegram",
     desc: "The fastest way to reach us. Drop a message anytime.",
-    action: "@rastyhq",
+    action: "@taq_ana",
     href: "https://t.me/taq_ana",
     label: "Open Telegram",
     delay: 0,

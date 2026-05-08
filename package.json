@@ -18,6 +18,7 @@
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
     "@tailwindcss/vite": "^4.2.2",
+    "@tensorflow/tfjs": "^4.22.0",
     "framer-motion": "^12.38.0",
     "motion": "^12.38.0",
     "react": "^19.2.4",

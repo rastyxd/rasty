@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=DM+Sans:wght@300;400&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0e0e0e"/>
+
+  <!-- Ghost watermark -->
+  <text
+    x="-20"
+    y="520"
+    font-family="'Bebas Neue', sans-serif"
+    font-size="420"
+    fill="none"
+    stroke="#2a2a2a"
+    stroke-width="1"
+    letter-spacing="-5"
+    opacity="0.8"
+  >RASTY</text>
+
+  <!-- Red accent bar -->
+  <rect x="60" y="60" width="4" height="80" fill="#e63323"/>
+
+  <!-- Name -->
+  <text
+    x="80"
+    y="122"
+    font-family="'Bebas Neue', sans-serif"
+    font-size="72"
+    fill="#f0ebe3"
+    letter-spacing="6"
+  >RASTY</text>
+
+  <!-- Tagline -->
+  <text
+    x="80"
+    y="290"
+    font-family="'Bebas Neue', sans-serif"
+    font-size="96"
+    fill="#f0ebe3"
+    letter-spacing="2"
+  >I BUILD WEBSITES</text>
+
+  <text
+    x="80"
+    y="390"
+    font-family="'Bebas Neue', sans-serif"
+    font-size="96"
+    fill="#f0ebe3"
+    letter-spacing="2"
+  >FOR SMALL BUSINESSES.</text>
+
+  <!-- Fast — in red -->
+  <text
+    x="80"
+    y="490"
+    font-family="'Bebas Neue', sans-serif"
+    font-size="96"
+    fill="#e63323"
+    letter-spacing="2"
+  >FAST.</text>
+
+  <!-- Domain -->
+  <text
+    x="1140"
+    y="590"
+    font-family="'DM Sans', sans-serif"
+    font-size="22"
+    fill="#7a7570"
+    text-anchor="end"
+    letter-spacing="3"
+  >RASTY.UK</text>
+
+  <!-- Bottom border line -->
+  <rect x="60" y="600" width="1080" height="1" fill="#2a2a2a"/>
+
+</svg>

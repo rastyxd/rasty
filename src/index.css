@@ -47,3 +47,163 @@ body  {
   white-space: nowrap;
   display: flex;
 }
+
+/* Responsive Container Layer */
+.responsive-container {
+  width: 100%;
+  min-height: 100vh;
+  /* Mobile first - base styles */
+  --container-padding: 16px;
+  --font-size-base: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  
+  /* Tablet & up */
+  @media (min-width: 630px) {
+    --container-padding: 24px;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 28px;
+  }
+  
+  /* Desktop & up */
+  @media (min-width: 1024px) {
+    --container-padding: 32px;
+    --font-size-base: 16px;
+    --font-size-lg: 22px;
+    --font-size-xl: 32px;
+  }
+}
+
+/* Utility: Responsive padding */
+.r-container {
+  padding: var(--container-padding);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Utility: Responsive typography */
+.r-text-base { font-size: var(--font-size-base); }
+.r-text-lg { font-size: var(--font-size-lg); }
+.r-text-xl { font-size: var(--font-size-xl); }
+
+/* Utility: Hide on mobile, show on tablet+ */
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: 630px) {
+  .hide-mobile {
+    display: block;
+  }
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Utility: Show on mobile, hide on tablet+ */
+.show-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .show-mobile {
+    display: none;
+  }
+}
+
+/* Nav responsive visibility */
+.nav-mobile {
+  display: block;
+}
+
+.nav-desktop {
+  display: none;
+}
+
+@media (min-width: 630px) {
+  .nav-mobile {
+    display: none !important;
+  }
+  
+  .nav-desktop {
+    display: flex !important;
+  }
+}
+
+/* Products grid */
+.products-grid {
+  grid-template-columns: 1fr;
+}
+
+.products-right-col {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 630px) {
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .products-right-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About grid */
+.about-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 630px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CTA grid */
+.cta-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 630px) {
+  .cta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Hero responsive */
+.hero-cta {
+  flex-direction: column;
+  width: 100%;
+}
+
+.hero-cta a {
+  width: 100%;
+}
+
+@media (min-width: 630px) {
+  .hero-cta {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  .hero-cta a {
+    width: auto;
+  }
+}
+
+.hero-stats {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 630px) {
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Contact grid */
+.contact-grid {
+  /* Flexbox wrapping for modal */
+}
